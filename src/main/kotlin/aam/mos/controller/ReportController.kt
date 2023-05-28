@@ -6,6 +6,7 @@ import aam.mos.plugins.JwtClaim
 import aam.mos.repository.PdfService
 import aam.mos.service.NeuralService
 import aam.mos.service.ReportService
+import aam.mos.service.UserService
 import aam.mos.util.unitRoute
 import io.ktor.http.*
 import io.ktor.resources.*
@@ -23,6 +24,7 @@ import kotlinx.serialization.Serializable
 class ReportController(
     private val neuralService: NeuralService,
     private val reportService: ReportService,
+    private val userService: UserService,
     private val pdfService: PdfService
 ) : Controller {
 
@@ -58,13 +60,14 @@ class ReportController(
 
             get<ReportPdf> {
                 val id = JwtClaim.getidFromCall(call)
+                val user = userService.getUser(id)
                 val report = reportService.getReport(id, it.id)
 
                 call.respondOutputStream(
                     contentType = ContentType.Application.Pdf,
                     status = HttpStatusCode.OK
                 ) {
-                    pdfService.renderPdf("Русик", report, this)
+                    pdfService.renderPdf(user.name ?: "пользователь", report, this)
                 }
             }
         }
