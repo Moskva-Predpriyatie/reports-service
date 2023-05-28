@@ -77,7 +77,7 @@ dependencies {
     implementation(libs.micrometer.registry.prometheus)
     implementation(libs.jedis)
     implementation(libs.konform)
-    implementation("com.itextpdf:html2pdf:5.0.0")
+    implementation(libs.itext)
 
     testImplementation(libs.ktor.server.tests)
     testImplementation(libs.kotlin.test.junit)
