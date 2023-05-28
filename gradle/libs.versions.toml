@@ -1,0 +1,63 @@
+[versions]
+ktor = "2.3.0"
+kotlin = "1.8.21"
+kmongo = "4.9.0"
+jedis = "4.4.1"
+logback = "1.4.5"
+serialization = "1.5.1"
+konform = "0.3.0"
+prometheus = "1.10.4"
+jib = "3.3.1"
+kodein = "7.20.1"
+coroutines = "1.7.1"
+reactor = "3.5.6"
+
+[libraries]
+ktor-bom = { module = "io.ktor:ktor-bom", version.ref = "ktor" }
+ktor-server-contentNegotiation = { module = "io.ktor:ktor-server-content-negotiation-jvm" }
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors-jvm" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json-jvm" }
+ktor-server-compression = { module = "io.ktor:ktor-server-compression-jvm" }
+ktor-server-resources = { module = "io.ktor:ktor-server-resources-jvm" }
+ktor-server-defaultHeaders = { module = "io.ktor:ktor-server-default-headers-jvm" }
+ktor-server-forwardedHeader = { module = "io.ktor:ktor-server-forwarded-header-jvm" }
+ktor-server-auth = { module = "io.ktor:ktor-server-auth-jvm" }
+ktor-server-auth-jwt = { module = "io.ktor:ktor-server-auth-jwt-jvm" }
+ktor-server-autoHead = { module = "io.ktor:ktor-server-auto-head-response-jvm" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm" }
+ktor-server-statusPages = { module = "io.ktor:ktor-server-status-pages-jvm" }
+ktor-server-callId = { module = "io.ktor:ktor-server-call-id-jvm" }
+ktor-server-callLogging = { module = "io.ktor:ktor-server-call-logging-jvm" }
+ktor-server-metrics-micrometer = { module = "io.ktor:ktor-server-metrics-micrometer" }
+ktor-server-openapi = { module = "io.ktor:ktor-server-openapi" }
+ktor-server-swagger = { module = "io.ktor:ktor-server-swagger" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core" }
+ktor-client-java = { module = "io.ktor:ktor-client-java" }
+ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation" }
+
+kotlin-std = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlin-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+kmongo = { module = "org.litote.kmongo:kmongo", version.ref = "kmongo" }
+kmongo-coroutines-serialization = { module = "org.litote.kmongo:kmongo-coroutine-serialization", version.ref = "kmongo" }
+konform = { module = "io.konform:konform-jvm", version.ref = "konform" }
+jedis = { module = "redis.clients:jedis", version.ref = "jedis" }
+micrometer-registry-prometheus = { module = "io.micrometer:micrometer-registry-prometheus", version.ref = "prometheus" }
+kodein = { module = "org.kodein.di:kodein-di-jvm", version.ref = "kodein" }
+kodein-ktor-controller = { module = "org.kodein.di:kodein-di-framework-ktor-server-controller-jvm", version.ref = "kodein" }
+
+ktor-server-tests = { module = "io.ktor:ktor-server-tests-jvm" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+
+reactor-core = { module = "io.projectreactor:reactor-core", version.ref = "reactor" }
+
+[plugins]
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+jib = { id = "com.google.cloud.tools.jib", version.ref = "jib" }
